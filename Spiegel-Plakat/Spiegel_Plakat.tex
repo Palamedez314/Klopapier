@@ -1,0 +1,309 @@
+% !TeX program = xelatex
+
+\documentclass[11pt]{article}
+\usepackage[paper=a4paper]{geometry}
+\usepackage{xcolor}
+\usepackage[german]{babel}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+\usepackage{eso-pic}
+\usepackage{amsmath, amssymb}
+\usepackage{anyfontsize}
+\usepackage{lipsum}% Für Blindtext.
+
+\usetikzlibrary{cd}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{positioning}
+
+\usepackage{mathrsfs}
+
+\usepackage{fontspec}
+\newfontfamily{\qta}{QTAtchen}[]
+\usepackage[ddmmyyyy]{datetime} 
+\renewcommand{\dateseparator}{.}
+
+\usepackage{flowfram}
+
+\usepackage{adjustbox}
+
+\usepackage[outline]{contour}
+
+
+\pgfmathsetseed{\number\randomseed}%"pgfrandomseed in PdfLaTeX"
+\pgfmathrandominteger{\n}{1}{100}
+\pgfmathrandominteger{\m}{1}{15}
+
+\setlength{\parindent}{0pt}
+
+% Spiegelfarben
+\definecolor{spiegelrot}{RGB}{237, 77, 46}
+% Eigene Farben
+\definecolor{kloblau}{rgb}{0,0.3,0.5}
+%\definecolor{uniblau}{cmyk}{1,0.55,0,0.43}
+\definecolor{klorange}{rgb}{0.8,0.5,0} %Ganz recht! Klorange! Mit nur einem o. 
+\definecolor{klogruen}{rgb}{0,0.5,0.3}
+\definecolor{klorot}{rgb}{0.5,0,0.3}
+\definecolor{kloviolett}{rgb}{0.3,0,0.5}
+
+\newcommand{\Klogo}{\mathfrak{Klo}\mathtt{pap\mspace{-0.5mu}i\mspace{-1mu}er}}
+\newcommand{\Klopapier}{\texttt{Klopapier}}
+
+% Passt die Textraender an
+%\newgeometry{
+%	left= 2.25cm,
+%	right=2.25cm,
+%	top=4cm,
+%	bottom=4cm,
+%	bindingoffset=0mm
+%}
+\newgeometry{
+left=1.5cm,
+right=1.5cm,
+top=1.5cm,
+bottom=1.5cm,
+bindingoffset=0mm
+}
+
+
+%------------------------------------------------------------------------------------------------
+%
+%  AB HIER SOLLEN AENDERUNGEN VORGENOMMEN WERDEN
+%
+%------------------------------------------------------------------------------------------------
+
+%  AUSGABENSPEZIFISCHE VOREINSTELLUNGEN
+
+%Ausgabenfarbe. 
+\newcommand{\Ausgabenfarbe}{% Optionen: kloblau, klorange, klogruen, klorot, kloviolett
+	spiegelrot%
+}
+
+%Ausgaben-Titel
+\newcommand{\Titel}{% Hier Titel einfügen
+\bgroup
+\def\arraystretch{0}
+\begin{tabular}{c}
+	\qta{\textbf{Macht}} \vspace{0.7pt}
+	\\ \qta{\textbf{Kategorientheorie}} 
+	\\ \qta{\textbf{krank?}} \end{tabular}
+\egroup
+}
+
+
+\tikzset{
+	triangle/.style={
+		regular polygon,
+		regular polygon sides=3,
+		node distance=2cm
+	}
+}
+
+\AddToShipoutPictureBG*{%
+	\begin{tikzpicture}[remember picture,overlay]
+		
+		% HINTERGRUND ÜBER DIE GANZE SEITE
+		\fill[\Ausgabenfarbe]
+		(current page.south west) rectangle (current page.north east);
+		
+		% WEISSER TEXTBEREICH (entspricht dem geometry-Satzspiegel)
+		\fill[white]
+		($(current page.south west) + (1.5cm,1.5cm)$)
+		rectangle
+		($(current page.north east) + (-1.5cm,-3.5cm)$);
+		
+		%\put(48.5,46.5){\includegraphics[width=0.98\textwidth,height=0.908\textheight]{Eisermann_cropped_klein2.png}}
+		
+		% AUSGABENNUMMER -- FUN FACT: Jedes Mal random.
+%		\node[anchor = north west, align = center] at ($(current page.north east) + (-8.5cm,-1.8cm)$)
+%		{\begin{large}%
+%				\fontfamily{cmss}\selectfont%
+%				Nr.\n
+%		\end{large}};
+	
+		\node[
+		align = center,
+		](test) at ($(current page.north east) + (-3.8cm,-2.1cm)$){\begin{normalsize}\fontfamily{cmss}\selectfont
+		\begin{tabular}{l}
+			\vspace*{-0.5mm}
+			C 420 CX\\
+			\hline
+			\vspace*{-1.5mm}
+			Nr. \n\\
+			\vspace*{-1mm}
+			51. Jahrgang$\: \cdot \:$\small{€}i\small{\$}to 2,00\\
+			\vspace*{-0.5mm}
+			27. November 2025\\
+			\hline
+		\end{tabular}\end{normalsize}};
+
+		
+%		% PREIS
+%		\node[anchor = north west] at ($(current page.north east) + (-8.5cm,-2.2cm)$)
+%		{\begin{large}%
+%				\fontfamily{cmss}\selectfont%
+%				\m.Jahrgang$\:\cdot\:$\normalsize{€}i\normalsize{\$}to 2,00%
+%		\end{large}};
+%		
+%		% DATUM
+%		\node[anchor = north west] at ($(current page.north east) + (-8.5cm,-2.6cm)$)
+%		{\begin{large}%
+%				\fontfamily{cmss}\selectfont%
+%				27.November 2025%
+%		\end{large}};
+		
+		
+		%KLOPAPIER LOGO SCHATTEN
+		\node[anchor=north west] at ($(current page.north west) + (1.65cm,-1cm)$)
+		{\fontsize{70}{70}\selectfont%
+			\textcolor{black}{$\Klogo$}%
+			\normalsize%
+		};	
+		
+		%KLOPAPIER LOGO
+		\node[anchor=north west] at ($(current page.north west) + (1.5cm,-1cm)$)
+		{\fontsize{70}{70}\selectfont
+			\textcolor{white}{$\Klogo$}
+			\normalsize
+		};
+		
+		\node [anchor=north west] at (1.48,23.5){\resizebox{\textwidth}{!}{%
+				\textcolor{black}{%\contour{black}{%
+						\Titel%
+			}}};
+		
+		\node [circle, fill=cyan, rotate=-20, anchor=north, minimum size=1cm,
+		drop shadow={opacity=1},  thick] at (3.3,25.5) {\usebox{\Produkt}};
+		
+		\node [fill=cyan, rotate=10, anchor=north, minimum size=1cm, drop shadow={opacity=1}] at (18,12) {\usebox{\Schlangenlemma}};
+		
+		\node [fill=orange, rotate=35, anchor=north, minimum size=3.0cm, drop shadow={opacity=1}] at (18.5,14.5) {\usebox{\Coprodukt}};
+		
+		\node [fill=red, rotate=-40, anchor=north, minimum size=4.0cm, drop shadow={opacity=1}] at (4,15) {\usebox{\Max}
+		};
+		
+		\node [circle, fill=red, rotate=0, anchor=north, minimum size=2.8cm,
+		drop shadow={opacity=1},  thick] at (2.2,10.5) {%\usebox{\Produkt}
+		};
+		
+		\node [circle, fill=orange, rotate=0, anchor=north, minimum size=2.8cm,
+		drop shadow={opacity=1},  thick] at (4.0,9.2) {%\usebox{\Pentagon}
+		};
+		
+		\node [triangle, fill=cyan, rotate=23, anchor=north, drop shadow={opacity=1}, minimum height=8em, name=Dreieck1] (Dreieck1) at (16.7,3.8) {};
+		%\node [fill=cyan, rotate=-15, anchor=north, draw] at ($(Dreieck1)+(-0.05cm,0.25cm)$) {\usebox{\Frei}};
+		\node [rotate=-10, anchor=north] at ($(Dreieck1)+(0.3cm,0.58cm)$) {\usebox{\Frei}};
+		
+		\node [triangle, fill=red, rotate=15, anchor=north, drop shadow={opacity=1}, minimum height=8em, name=Dreieck1] (Dreieck1) at (19.6,3.0) {};
+		\node [rotate=-10, anchor=north] at ($(Dreieck1)+(-0.15cm,0.65cm)$) {%\usebox{\Frei}
+		};
+		
+		\node [triangle, fill=orange, rotate=-30, anchor=north, drop shadow={opacity=1}, minimum height=8em, name=Dreieck1] (Dreieck1) at (21.3,6.2) {};
+		\node [rotate=-10, anchor=north] at ($(Dreieck1)+(-0.15cm,0.65cm)$) {%\usebox{\Frei}
+		};
+		
+		\node [fill=orange, rotate=10, anchor=north, minimum size=1cm, drop shadow={opacity=1}] at (10,2.5) {%\usebox{\Schlangenlemma}
+		};
+		
+		\node [circle, fill=cyan, rotate=0, anchor=north, minimum size=2.5cm,
+		drop shadow={opacity=1},  thick] at (2.2,3.2) {%\usebox{\Produkt}
+		};
+		
+		\rotatebox[]{-45}{\\
+			\draw[draw=black, fill=black] (-6,3) rectangle ++(12,2.35) node [pos=.5]{
+				\textcolor{white}{\fontfamily{lmss}\fontsize{32}{0}\selectfont
+					\begin{tabular}{c}
+						\vspace*{-0.8mm}				
+						\huge{\hspace*{2mm}Klopapier-Gespräch mit LNK-Vize}\\
+						\textbf{Svenja Loy}\\
+						\vspace*{-0.8mm}
+						\huge{\hspace*{4mm}\glqq{}Lust am Untergang\grqq{}}
+					\end{tabular}
+			}};}
+		
+		
+	\end{tikzpicture}%
+}
+
+\newsavebox{\Produkt}
+\newsavebox{\Coprodukt}
+\newsavebox{\Kern}
+\newsavebox{\Schlangenlemma}
+\newsavebox{\Frei}
+\newsavebox{\Max}
+%\newsavebox{\Pentagon}
+
+\input{comm_diag.tex}
+
+
+\newflowframe[2-3]{0.30\textwidth}{\textheight}
+{0pt}{0pt}[leftcolumn]
+
+\newflowframe[2-3]{0.30\textwidth}{\textheight}
+{0.35\textwidth}{0pt}[centercolumn]
+
+\newflowframe[2-3]{0.30\textwidth}{\textheight}
+{0.7\textwidth}{0pt}[rightcolumn]
+
+\newflowframe[1]{\textwidth}{\textheight}
+{0pt}{-75pt}[statico]
+
+
+
+\begin{document}
+	
+\pagestyle{empty}
+\begin{tikzpicture}[commutative diagrams/every diagram]
+	\node (P0) at (90:2.3cm) {$X\otimes (Y\otimes (Z\otimes T))$};
+	\node (P1) at (90+72:2cm) {$X\otimes ((Y\otimes Z)\otimes T))$} ;
+	\node (P2) at (90+2*72:2cm) {\makebox[5ex][r]{$(X\otimes (Y\otimes Z))\otimes T$}};
+	\node (P3) at (90+3*72:2cm) {\makebox[5ex][l]{$((X\otimes Y)\otimes Z)\otimes T$}};
+	\node (P4) at (90+4*72:2cm) {$(X\otimes Y)\otimes (Z\otimes T)$};
+	\path[commutative diagrams/.cd, every arrow, every label]
+	(P0) edge node[swap] {$1\otimes\phi$} (P1)
+	(P1) edge node[swap] {$\phi$} (P2)
+	(P2) edge node {$\phi\otimes 1$} (P3)
+	(P4) edge node {$\phi$} (P3)
+	(P0) edge node {$\phi$} (P4);
+\end{tikzpicture}
+\text{}
+\newpage
+
+\large{
+Der Stuttgarter Mathematik-\\Professor Jens Wirth erlebt »zwischen 10 und 12 Uhr nachts«, »daß etwas falsch sein muß«. Dann rufen ihn »Bekannte von Bekannten von Bekannten« und bitten ihn, bei den Hausaufgaben der Linearen Algebra zu helfen. Immer geht es um Kategorientheorie.\\
+
+Schon kapituliert hat Aram Daher, der als Tutor bei der Linearen Algebra hilft. Er wollte das Skript von Eisermann verfaßt für das erste Semester, durcharbeiten. Aber: »Es ist für mich aussichtslos, geistig zu folgen.«\\
+
+»Schluß mit dem Reformwahnsinn«, telegraphierte Handwerksmeister Wunderlich aus dem fränkischen Taubertal nach Stuttgart, als das Klopapier Mitte September eine Fernsehsendung »Pro und contra Kategorientheorie« ankündigte.\\»Wir sind für Abschaffung der Kategorientheorie«, meldete die »gesamte Studienschaft Erstsemester« per Fernschreiben.\\Noch nie gab es vor einer Sendung »Pro und contra ...« so viel Post. Alle Eingänge waren contra.\\
+
+Studierende aller Semester und aller Grade von Bildung, in allen Instituten und in allen Stockwerken empören sich über ein Studienfach, das »Lineare Algebra« heißt und als »Kategorientheorie« verdammt wird, am liebsten in alle Ewigkeit.\\
+
+Daß die Kategorientheorie weder anwendbar noch tbd ist, zeigen die Debatten im Fakultätsrat. Fast überall ist die Opposition, gleich ob Physik oder Mathematik, lautstark dagegen, und der jeweilige Fachbereich ist nur so vorsichtig dafür, daß er notfalls noch auf Gegenkurs gehen kann.\\
+
+(Ausnahmen gibt es lediglich im IAZ. Der Dozent für Darstellungstheorie Frederik Marks ist eindeutig dafür und wird von Genossen verdächtigt, das habe den Fachbereich bei der tbd eine Stelle gekostet. Und IADMs Ex-Studiendekan Marcel Griesemer ist eindeutig dagegen. Er setzte die Kategorientheorie in den ersten Semestern seiner Vorlesungen auf 15 Prozent herab, erwägt weitere Schritte und drängt auch seine Kollegen, »umgehend eine »Kurskorrektur« herbeizuführen«.)\\
+
+In dieser Woche hofft das Tutorenduo Irini Malegiannaki und Galaktion Garidis dies zumindest für eine Vorlesung durch Gerichtsurteil(tbd) zu erzwingen. Der Baden-Würtembergische Verfassungsgerichtshof(tbd) hat für Donnerstag die Entscheidung darüber angekündigt, ob die \\Kategorien-Lehre in den Übungen der Analysis Menschenwürde und Tutorenfreiheit verletzt.\\
+
+Die Kategorientheorie beschäftigt und empört mehr Tutoren als irgendein anderes Hochschulthema. In den meisten Vorlesungen müssen die Studienanfänger seit dem Wintersemester 2024/25, in einigen seit 2025/26 die moderne Mathematik lernen.\\
+
+Schon von den ersten Unitagen an sind Studierende damit beschäftigt, Dreiecke, Quadrate und Kegel zu malen und zu verfolgen, Pfeile nach Morphismen, Funktoren oder natürlichen Transformationen auseinanderzuhalten und mit Limites, Adjunktionen oder exakten Sequenzen zu spielen. Zu Kategorien wird vieles, was die jungen Mathematiker umgibt: Gruppen und Ringe, Vektorräume über einem Körper und die Ordnung daheim in den natürlichen Zahlen.\\
+
+Es gibt Studierende, die das ganze erste Semester lang diese moderne Mathematik lernen, aber noch keinen einzigen logischen Ausdruck kennen, geschweige denn beweisen können. Doch auch dort, wo nicht« nur gezeichnet und verfolgt, sondern auch konstruiert und bewiesen wird, verlangt die fremde Herangehensweise nach Ansicht vieler Assistenten teils zuwenig (weil gespielt und nicht gelernt wird), teils zuviel: Die Studierenden gebrauchen Zeichen und Wörter, ohne die man früher bequem durchs Diplom kam.\\
+
+Kursive Buchstaben und Pfeile, die in immer neue und immer andere Diagramme geschrieben oder gezeichnet werden, füllen viele Blöcke. LinA-Tutoren, die pflichtbewußt den Bestseller »Categories for the working Mathematician« oder ein anderes der fünf Dutzend Lehrbücher gelesen oder ein Seminar am IGT besucht haben, sind ihren Tutanten wenigstens in der Erkenntnis voraus, daß es Mengen in Unmengen gibt: unter anderem Grund-, Teil-,\\Vereinigungs-,\\Ergänzungs-, Schnitt-,\\Unterschieds-, Null-,\\Verbindungs-, Rest-,\\Produkt-Lösungsmengen.\\ %\\(Produkt-, Tensor-, Funktor-, 
+
+Aber selbst allabendlich strebend bemühten Turtoren fällt es oft schwer, mit ihren Sprößlingen mitzuhalten oder ihnen zu helfen, wenn sich die Begriffe verwirren.\\
+
+Von Limites reden Achtzehnjährige und meinen nicht Folgen oder Reihen, sondern universelle Abbildungseigenschaften von Haselnüssen und Rosinen. Und wenn sie sagen, irgend etwas sei »eindeutig bis auf eindeutige Isomorphie«, dann stottern sie nicht, sondern sind stolz darauf, daß sie dem Assistenten auch dann überlegen sind, wenn er Bachelor- und Masterabschluss besitzt. \\Laut Kategorientheorie-\\Gegner Max Schölpple (ISA) »sehen die Studierenden früh, zu früh, ihre Tutoren hilflos und unwissend. Damit schwindet die Achtung, die Studierenden können nicht mehr ihre Tutoren fragen, deren Vorbild verblaßt«.\\
+
+}
+
+%\Large{\glqq Extrablatt\grqq ?}
+	
+	
+\end{document}

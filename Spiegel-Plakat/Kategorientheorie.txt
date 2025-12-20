@@ -1,0 +1,34 @@
+Der Stuttgarter Mathematik-Professor Jens Wirth erlebt »zwischen 10 und 12 Uhr nachts«, »daß etwas falsch sein muß«. Dann rufen ihn »Bekannte von Bekannten von Bekannten« und bitten ihn, bei den Hausaufgaben der Linearen Algebra zu helfen. Immer geht es um Kategorientheorie.
+
+Schon kapituliert hat Aram Daher, der als Tutor bei der Linearen Algebra hilft. Er wollte das Skript von Eisermann verfaßt für das erste Semester, durcharbeiten. Aber: »Es ist für mich aussichtslos, geistig zu folgen.«
+
+»Schluß mit dem Reformwahnsinn«, telegraphierte Handwerksmeister Wunderlich aus dem fränkischen Taubertal nach Stuttgart, als das Klopapier Mitte September eine Fernsehsendung »Pro und contra Kategorientheorie« ankündigte. »Wir sind für Abschaffung der Kategorientheorie«, meldete die »gesamte Studienschaft Erstsemester« per Fernschreiben. Noch nie gab es vor einer Sendung »Pro und contra ...« so viel Post. Alle Eingänge waren contra.
+
+Studierende aller Semester und aller Grade von Bildung, in allen Instituten und in allen Stockwerken empören sich über ein Studienfach, das »Lineare Algebra« heißt und als »Kategorientheorie« verdammt wird, am liebsten in alle Ewigkeit.
+
+Daß die Kategorientheorie weder anwendbar noch tbd ist, zeigen die Debatten im Fakultätsrat. Fast überall ist die Opposition, gleich ob Physik oder Mathematik, lautstark dagegen, und der jeweilige Fachbereich ist nur so vorsichtig dafür, daß er notfalls noch auf Gegenkurs gehen kann.
+
+(Ausnahmen gibt es lediglich im IAZ. Der Dozent für Darstellungstheorie Frederik Marks ist eindeutig dafür und wird von Genossen verdächtigt, das habe den Fachbereich bei der tbd eine Stelle gekostet. Und IADMs Ex-Studiendekan Marcel Griesemer ist eindeutig dagegen. Er setzte die Kategorientheorie in den ersten Semestern seiner Vorlesungen auf 15 Prozent herab, erwägt weitere Schritte und drängt auch seine Kollegen, »umgehend eine »Kurskorrektur« herbeizuführen«.)
+
+In dieser Woche hofft das Tutorenduo Irini Malegiannaki und Galaktion Garidis dies zumindest für eine Vorlesung durch Gerichtsurteil(tbd) zu erzwingen. Der Baden-Würtembergische Verfassungsgerichtshof(tbd) hat für Donnerstag die Entscheidung darüber angekündigt, ob die Kategorien-Lehre in den Übungen der Analysis Menschenwürde und Tutorenfreiheit verletzt.
+
+Die Kategorientheorie beschäftigt und empört mehr Tutoren als irgendein anderes Hochschulthema. In den meisten Vorlesungen müssen die Studienanfänger seit dem Wintersemester 2024/25, in einigen seit 2025/26 die moderne Mathematik lernen.
+
+Schon von den ersten Unitagen an sind Studierende damit beschäftigt, Dreiecke, Quadrate und Kegel zu malen und zu verfolgen, Pfeile nach Morphismen, Funktoren oder natürlichen Transformationen auseinanderzuhalten und mit Limites, Adjunktionen oder exakten Sequenzen zu spielen. Zu Kategorien wird vieles, was die jungen Mathematiker umgibt: Gruppen und Ringe, Vektorräume über einem Körper und die Ordnung daheim in den natürlichen Zahlen.
+
+Es gibt Studierende, die das ganze erste Semester lang diese moderne Mathematik lernen, aber noch keinen einzigen logischen Ausdruck kennen, geschweige denn beweisen können. Doch auch dort, wo nicht« nur gezeichnet und verfolgt, sondern auch konstruiert und bewiesen wird, verlangt die fremde Herangehensweise nach Ansicht vieler Assistenten teils zuwenig (weil gespielt und nicht gelernt wird), teils zuviel: Die Studierenden gebrauchen Zeichen und Wörter, ohne die man früher bequem durchs Diplom kam.
+
+Kursive Buchstaben und Pfeile, die in immer neue und immer andere Diagramme geschrieben oder gezeichnet werden, füllen viele Blöcke. LinA-Tutoren, die pflichtbewußt den Bestseller »Categories for the working Mathematician« oder ein anderes der fünf Dutzend Lehrbücher gelesen oder ein Seminar am IGT besucht haben, sind ihren Tutanten wenigstens in der Erkenntnis voraus, daß es Mengen in Unmengen gibt: unter anderem Grund-, Teil-, Vereinigungs-, Ergänzungs-, Schnitt-, »Unterschieds-, Null-, Verbindungs-, Rest-, Produkt-Lösungsmengen.(Produkt-, Tensor-, Funktor-, 
+
+Aber selbst allabendlich strebend bemühten Turtoren fällt es oft schwer, mit ihren Sprößlingen mitzuhalten oder ihnen zu helfen, wenn sich die Begriffe verwirren.
+
+Von Limites reden Achtzehnjährige und meinen nicht Folgen oder Reihen, sondern universelle Abbildungseigenschaften von Haselnüssen und Rosinen. Und wenn sie sagen, irgend etwas sei »eindeutig bis auf eindeutige Isomorphie«, dann stottern sie nicht, sondern sind stolz darauf, daß sie dem Assistenten auch dann überlegen sind, wenn er Bachelor- und Masterabschluss besitzt. Laut Kategorientheorie-Gegner Max Schölpple (ISA) »sehen die Studierenden früh, zu früh, ihre Tutoren hilflos und unwissend. Damit schwindet die Achtung, die Studierenden können nicht mehr ihre Tutoren fragen, deren Vorbild verblaßt«.
+
+
+
+
+
+
+
+
+Titelbild, Rückseite Artikel (so groß, dass Seite gefüllt wird)

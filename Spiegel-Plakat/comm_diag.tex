@@ -1,0 +1,130 @@
+\begin{lrbox}{\Produkt}%
+	
+	\adjustbox{scale=0.8}{
+		\begin{tikzcd}%[scale cd=2,sep=large]
+			Y && P \\
+			\\
+			&& {X_i}
+			\arrow["{\exists !f}", dashed, from=1-1, to=1-3]
+			\arrow["{\forall f_i}"', from=1-1, to=3-3]
+			\arrow["{\pi_i}", from=1-3, to=3-3]
+		\end{tikzcd}
+		
+	}
+\end{lrbox}
+
+\begin{lrbox}{\Coprodukt}
+	
+	\adjustbox{scale=0.8}{
+		\begin{tikzcd}
+			Y && C \\
+			\\
+			&& {X_i}
+			\arrow["{{\exists !f}}"', dashed, from=1-3, to=1-1]
+			\arrow["{{\forall f_i}}", from=3-3, to=1-1]
+			\arrow["{{\iota_i}}"', from=3-3, to=1-3]
+		\end{tikzcd}
+	}
+	
+\end{lrbox}
+
+
+\begin{lrbox}{\Kern}
+	
+	\adjustbox{scale=0.8}{
+		\begin{tikzcd}
+			Y \\
+			& {\text{ker}(f)} && 0 \\
+			\\
+			& A && B
+			\arrow["{\exists !}"', from=1-1, to=2-2]
+			\arrow["{ \forall}"',bend left=10 , from=1-1, to=2-4]
+			\arrow["\forall"',bend right=10 , from=1-1, to=4-2]
+			\arrow[from=2-2, to=2-4]
+			\arrow["p"', from=2-2, to=4-2]
+			\arrow[from=2-4, to=4-4]
+			\arrow["f"', from=4-2, to=4-4]
+		\end{tikzcd}
+	}
+\end{lrbox}
+
+\begin{lrbox}{\Schlangenlemma}
+	
+	\adjustbox{scale=0.5}{
+		\begin{tikzcd}[background color=cyan]
+			& {\text{ker}a} && {\text{ker}b} && {\text{ker}c} \\
+			& A && B  && C & 0 \\
+			& && \arrow[draw=none]{d}[name=X, anchor=center]{}\\
+			0 & {A'} && {B'} && {C'} \\
+			& {\text{cok}a} && {\text{cok}b} && {\text{cok}c}
+			\arrow[from=1-2, to=1-4]
+			\arrow[from=1-2, to=2-2]
+			\arrow[from=1-4, to=1-6]
+			\arrow[from=1-4, to=2-4]
+			\arrow[from=1-6, to=2-6]
+			\arrow["f", from=2-2, to=2-4]
+			\arrow["a"{pos=0.3}, from=2-2, to=4-2]
+			\arrow["g", from=2-4, to=2-6]
+			\arrow["b"{pos=0.3}, from=2-4, to=4-4]
+			\arrow[from=2-6, to=2-7]
+			\arrow["c"{pos=0.3}, from=2-6, to=4-6]
+			\arrow[from=4-1, to=4-2]
+			\arrow["{f'}", from=4-2, to=4-4]
+			\arrow[from=4-2, to=5-2]
+			\arrow["{g'}", from=4-4, to=4-6]
+			\arrow[from=4-4, to=5-4]
+			\arrow[from=4-6, to=5-6]
+			\arrow[from=5-2, to=5-4]
+			\arrow[from=5-4, to=5-6]
+			\arrow["{\delta}"{pos=0.4}, crossing over, rounded corners, from=1-6, to=5-2, to path={ 
+				-- ([xshift=2ex]\tikztostart.east)
+				|- ([yshift=2.5ex]X.center) \tikztonodes
+				-| ([xshift=-2ex]\tikztotarget.west)
+				-- (\tikztotarget)}
+			]{dll}[at end]{}
+		\end{tikzcd}
+	}
+	
+\end{lrbox}
+
+\begin{lrbox}{\Frei}
+	
+	\adjustbox{scale=0.55}{
+		\begin{tikzcd}	
+			{\text{Set}} & \bot & {\mathscr{C}}
+			\arrow["F", bend left=20, from=1-1, to=1-3]
+			\arrow["V", bend left=20, from=1-3, to=1-1]
+		\end{tikzcd}
+	}
+	
+\end{lrbox}
+
+\begin{lrbox}{\Max}
+	\adjustbox{scale=0.35}{
+		\begin{tikzcd}[background color=red]
+			&&& {X[1]} \\
+			&& {Z'} \\
+			& Y \\
+			X && Z && {Y'} && {X[1]} \\
+			&&& X \\
+			&& {Z'[1]} && {Y[1]}
+			\arrow[shift left, no head, from=1-4, to=4-7]
+			\arrow[shift right, no head, from=1-4, to=4-7]
+			%\arrow[squiggly, from=2-3, to=1-4]
+			\arrow["\exists"', dashed, from=2-3, to=4-5]
+			\arrow[from=3-2, to=2-3]
+			\arrow["g", from=3-2, to=4-3]
+			\arrow["f"', from=4-1, to=3-2]
+			\arrow[from=4-1, to=4-3]
+			\arrow[from=4-3, to=4-5]
+			\arrow[from=4-3, to=5-4]
+			\arrow[from=4-5, to=4-7]
+			\arrow["\exists"{description}, dashed, from=4-5, to=5-4]
+			\arrow[from=4-7, to=6-5]
+			%\arrow["\exists"{description}, squiggly, from=5-4, to=6-3]
+			%\arrow[squiggly, from=5-4, to=6-5]
+			%\arrow[squiggly, from=6-5, to=6-3]
+		\end{tikzcd}
+	}
+\end{lrbox}
+
