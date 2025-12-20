@@ -1,4 +1,4 @@
-% !TeX program = xelatex
+% !TeX program = lualatex
 
 \documentclass[11pt]{article}
 \usepackage[paper=a4paper]{geometry}
@@ -10,6 +10,7 @@
 \usetikzlibrary{decorations.text}
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{fit}
+\usetikzlibrary{decorations.pathmorphing}
 \usepackage{eso-pic}
 \usepackage{amsmath, amssymb}
 \usepackage{anyfontsize}
@@ -192,7 +193,7 @@ bindingoffset=0mm
 		};
 		
 		\node [circle, fill=orange, rotate=0, anchor=north, minimum size=2.8cm,
-		drop shadow={opacity=1},  thick] at (4.0,9.2) {%\usebox{\Pentagon}
+		drop shadow={opacity=1},  thick] at (4.0,9.2) {\usebox{\Pentagon}
 		};
 		
 		\node [triangle, fill=cyan, rotate=23, anchor=north, drop shadow={opacity=1}, minimum height=8em, name=Dreieck1] (Dreieck1) at (16.7,3.8) {};
@@ -207,11 +208,11 @@ bindingoffset=0mm
 		\node [rotate=-10, anchor=north] at ($(Dreieck1)+(-0.15cm,0.65cm)$) {%\usebox{\Frei}
 		};
 		
-		\node [fill=orange, rotate=10, anchor=north, minimum size=1cm, drop shadow={opacity=1}] at (10,2.5) {%\usebox{\Schlangenlemma}
+		\node [fill=orange, rotate=10, anchor=north, minimum size=1cm, drop shadow={opacity=1}] at (10,2.5) {\usebox{\Quotient}
 		};
 		
 		\node [circle, fill=cyan, rotate=0, anchor=north, minimum size=2.5cm,
-		drop shadow={opacity=1},  thick] at (2.2,3.2) {%\usebox{\Produkt}
+		drop shadow={opacity=1},  thick] at (2.2,3.2) {%\usebox{\Quotient}
 		};
 		
 		\rotatebox[]{-45}{\\
@@ -236,7 +237,8 @@ bindingoffset=0mm
 \newsavebox{\Schlangenlemma}
 \newsavebox{\Frei}
 \newsavebox{\Max}
-%\newsavebox{\Pentagon}
+\newsavebox{\Pentagon}
+\newsavebox{\Quotient}
 
 \input{comm_diag.tex}
 
@@ -258,19 +260,7 @@ bindingoffset=0mm
 \begin{document}
 	
 \pagestyle{empty}
-\begin{tikzpicture}[commutative diagrams/every diagram]
-	\node (P0) at (90:2.3cm) {$X\otimes (Y\otimes (Z\otimes T))$};
-	\node (P1) at (90+72:2cm) {$X\otimes ((Y\otimes Z)\otimes T))$} ;
-	\node (P2) at (90+2*72:2cm) {\makebox[5ex][r]{$(X\otimes (Y\otimes Z))\otimes T$}};
-	\node (P3) at (90+3*72:2cm) {\makebox[5ex][l]{$((X\otimes Y)\otimes Z)\otimes T$}};
-	\node (P4) at (90+4*72:2cm) {$(X\otimes Y)\otimes (Z\otimes T)$};
-	\path[commutative diagrams/.cd, every arrow, every label]
-	(P0) edge node[swap] {$1\otimes\phi$} (P1)
-	(P1) edge node[swap] {$\phi$} (P2)
-	(P2) edge node {$\phi\otimes 1$} (P3)
-	(P4) edge node {$\phi$} (P3)
-	(P0) edge node {$\phi$} (P4);
-\end{tikzpicture}
+
 \text{}
 \newpage
 
