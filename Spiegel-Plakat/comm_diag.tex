@@ -129,14 +129,14 @@
 \end{lrbox}
 
 \begin{lrbox}{\Pentagon}
-	\adjustbox{scale=0.30}{
+	\adjustbox{scale=0.35}{
 		
 		\begin{tikzpicture}[commutative diagrams/every diagram]
-			\node (P0) at (90:2.3cm) {$X\otimes (Y\otimes (Z\otimes T))$};
-			\node (P1) at (90+72:2cm) {$X\otimes ((Y\otimes Z)\otimes T)$} ;
-			\node (P2) at (90+2*72:2cm) {\makebox[5ex][r]{$(X\otimes (Y\otimes Z))\otimes T$}};
-			\node (P3) at (90+3*72:2cm) {\makebox[5ex][l]{$((X\otimes Y)\otimes Z)\otimes T$}};
-			\node (P4) at (90+4*72:2cm) {$(X\otimes Y)\otimes (Z\otimes T)$};
+			\node (P0) at (90:2.3cm) {\footnotesize{$X\otimes (Y\otimes (Z\otimes T))$}};
+			\node (P1) at (90+72:2cm) {\footnotesize{$X\otimes ((Y\otimes Z)\otimes T)$}} ;
+			\node (P2) at (90+2*72:2cm) {\makebox[5ex][r]{\footnotesize{$(X\otimes (Y\otimes Z))\otimes T$}}};
+			\node (P3) at (90+3*72:2cm) {\makebox[5ex][l]{\footnotesize{$((X\otimes Y)\otimes Z)\otimes T$}}};
+			\node (P4) at (90+4*72:2cm) {\footnotesize{$(X\otimes Y)\otimes (Z\otimes T)$}};
 			\path[commutative diagrams/.cd, every arrow, every label]
 			(P0) edge node[swap] {$1\otimes\phi$} (P1)
 			(P1) edge node[swap] {$\phi$} (P2)

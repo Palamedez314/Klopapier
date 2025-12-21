@@ -118,7 +118,7 @@ bindingoffset=0mm
 		rectangle
 		($(current page.north east) + (-1.5cm,-3.5cm)$);
 		
-		%\put(48.5,46.5){\includegraphics[width=0.98\textwidth,height=0.908\textheight]{Eisermann_cropped_klein2.png}}
+		\put(48.5,46.5){\includegraphics[width=0.98\textwidth,height=0.908\textheight]{Michael-Eisermann-2022-l_cropped2.jpg}}
 		
 		% AUSGABENNUMMER -- FUN FACT: Jedes Mal random.
 %		\node[anchor = north west, align = center] at ($(current page.north east) + (-8.5cm,-1.8cm)$)
@@ -174,9 +174,9 @@ bindingoffset=0mm
 		};
 		
 		\node [anchor=north west] at (1.48,23.5){\resizebox{\textwidth}{!}{%
-				\textcolor{black}{%\contour{black}{%
+				\textcolor{black}{\contour{white}{%
 						\Titel%
-			}}};
+			}}}};
 		
 		\node [circle, fill=cyan, rotate=-20, anchor=north, minimum size=1cm,
 		drop shadow={opacity=1},  thick] at (3.3,25.5) {\usebox{\Produkt}};
@@ -193,22 +193,23 @@ bindingoffset=0mm
 		};
 		
 		\node [circle, fill=orange, rotate=0, anchor=north, minimum size=2.8cm,
-		drop shadow={opacity=1},  thick] at (4.0,9.2) {\usebox{\Pentagon}
+		drop shadow={opacity=1},  thick] (Kreis) at (4.0,9.2) {};
+		\node [rotate=0, anchor=north] at ($(Kreis)+(-0cm,1cm)$) {\usebox{\Pentagon}
 		};
 		
 		\node [triangle, fill=cyan, rotate=23, anchor=north, drop shadow={opacity=1}, minimum height=8em, name=Dreieck1] (Dreieck1) at (16.7,3.8) {};
 		%\node [fill=cyan, rotate=-15, anchor=north, draw] at ($(Dreieck1)+(-0.05cm,0.25cm)$) {\usebox{\Frei}};
 		\node [rotate=-10, anchor=north] at ($(Dreieck1)+(0.3cm,0.58cm)$) {\usebox{\Frei}};
 		
-		\node [triangle, fill=red, rotate=15, anchor=north, drop shadow={opacity=1}, minimum height=8em, name=Dreieck1] (Dreieck1) at (19.6,3.0) {};
-		\node [rotate=-10, anchor=north] at ($(Dreieck1)+(-0.15cm,0.65cm)$) {%\usebox{\Frei}
+		\node [triangle, fill=red, rotate=15, anchor=north, drop shadow={opacity=1}, minimum height=8em, name=Dreieck1] (Dreieck2) at (19.6,3.0) {};
+		\node [rotate=-10, anchor=north] at ($(Dreieck2)+(-0.15cm,0.65cm)$) {%\usebox{\Frei}
 		};
 		
-		\node [triangle, fill=orange, rotate=-30, anchor=north, drop shadow={opacity=1}, minimum height=8em, name=Dreieck1] (Dreieck1) at (21.3,6.2) {};
-		\node [rotate=-10, anchor=north] at ($(Dreieck1)+(-0.15cm,0.65cm)$) {%\usebox{\Frei}
+		\node [triangle, fill=orange, rotate=-30, anchor=north, drop shadow={opacity=1}, minimum height=8em, name=Dreieck1] (Dreieck3) at (21.3,6.2) {};
+		\node [rotate=-10, anchor=north] at ($(Dreieck3)+(-0.15cm,0.65cm)$) {%\usebox{\Frei}
 		};
 		
-		\node [fill=orange, rotate=10, anchor=north, minimum size=1cm, drop shadow={opacity=1}] at (10,2.5) {\usebox{\Quotient}
+		\node [fill=orange, rotate=10, anchor=north, minimum size=0.5cm, drop shadow={opacity=1}] at (10,2.1) {\usebox{\Quotient}
 		};
 		
 		\node [circle, fill=cyan, rotate=0, anchor=north, minimum size=2.5cm,
