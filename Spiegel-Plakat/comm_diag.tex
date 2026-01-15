@@ -1,33 +1,69 @@
-\begin{lrbox}{\Produkt}%
-	
-	\adjustbox{scale=0.8}{
-		\begin{tikzcd}%[scale cd=2,sep=large]
-			Y && P \\
+%\begin{lrbox}{\Produkt}%
+%	
+%	\adjustbox{scale=0.8}{
+%		\begin{tikzcd}%[scale cd=2,sep=large]
+%			Y && P \\
+%			\\
+%			&& {X_i}
+%			\arrow["{\exists !f}", dashed, from=1-1, to=1-3]
+%			\arrow["{\forall f_i}"', from=1-1, to=3-3]
+%			\arrow["{\pi_i}", from=1-3, to=3-3]
+%		\end{tikzcd}
+%		
+%	}
+%\end{lrbox}
+
+%\begin{lrbox}{\Coprodukt}
+%	
+%	\adjustbox{scale=0.8}{
+	%		\begin{tikzcd}
+		%			Y && C \\
+		%			\\
+		%			&& {X_i}
+		%			\arrow["{{\exists !f}}"', dashed, from=1-3, to=1-1]
+		%			\arrow["{{\forall f_i}}", from=3-3, to=1-1]
+		%			\arrow["{{\iota_i}}"', from=3-3, to=1-3]
+		%		\end{tikzcd}
+	%	}
+%	
+%\end{lrbox}
+
+
+\tikzset{
+	down/.style={anchor=south, rotate=-90, inner sep=.5mm}
+}
+
+\tikzset{
+	up/.style={anchor=south, rotate=90, inner sep=.5mm}
+}
+
+\begin{lrbox}{\Produkt}
+	\adjustbox{scale=0.5}{
+		\begin{tikzcd}[background color=gelborange]
+			& {\Large{P}} \\
 			\\
-			&& {X_i}
-			\arrow["{\exists !f}", dashed, from=1-1, to=1-3]
-			\arrow["{\forall f_i}"', from=1-1, to=3-3]
-			\arrow["{\pi_i}", from=1-3, to=3-3]
+			\\
+			{\Large{Y}} && {\Large{X_i}}
+			\arrow["{\Large{\exists!f}}"{description}, dashed, from=1-2, to=4-1]
+			\arrow["{\Large{\pi_i}}"{description}, from=1-2, to=4-3]
+			\arrow["{\Large{\forall f_i}}"', from=4-1, to=4-3]
 		\end{tikzcd}
-		
 	}
 \end{lrbox}
 
 \begin{lrbox}{\Coprodukt}
-	
-	\adjustbox{scale=0.8}{
-		\begin{tikzcd}
-			Y && C \\
+	\adjustbox{scale=0.5}{
+		\begin{tikzcd}[background color=red]
+			& {\Large{C}} \\
 			\\
-			&& {X_i}
-			\arrow["{{\exists !f}}"', dashed, from=1-3, to=1-1]
-			\arrow["{{\forall f_i}}", from=3-3, to=1-1]
-			\arrow["{{\iota_i}}"', from=3-3, to=1-3]
+			\\
+			{\Large{X_i}} && {\Large{Y}}
+			\arrow["{\Large{\exists!f}}"{description}, dashed, from=1-2, to=4-3]
+			\arrow["{\Large{\iota_i}}"{description}, from=4-1, to=1-2]
+			\arrow["{\Large{\forall f_i}}"', from=4-1, to=4-3]
 		\end{tikzcd}
 	}
-	
 \end{lrbox}
-
 
 \begin{lrbox}{\Kern}
 	
@@ -51,7 +87,7 @@
 \begin{lrbox}{\Schlangenlemma}
 	
 	\adjustbox{scale=0.5}{
-		\begin{tikzcd}[background color=cyan]
+		\begin{tikzcd}[background color=hellcyan]
 			& {\text{ker}a} && {\text{ker}b} && {\text{ker}c} \\
 			& A && B  && C & 0 \\
 			& && \arrow[draw=none]{d}[name=X, anchor=center]{}\\
@@ -89,7 +125,7 @@
 
 \begin{lrbox}{\Frei}
 	
-	\adjustbox{scale=0.55}{
+	\adjustbox{scale=0.6}{
 		\begin{tikzcd}	
 			{\text{Set}} & \bot & {\mathscr{C}}
 			\arrow["F", bend left=20, from=1-1, to=1-3]
@@ -100,30 +136,30 @@
 \end{lrbox}
 
 \begin{lrbox}{\Max}
-	\adjustbox{scale=0.35}{
+	\adjustbox{scale=0.25}{
 		\begin{tikzcd}[background color=red]
 			&&& {X[1]} \\
-			&& {Z'} \\
-			& Y \\
-			X && Z && {Y'} && {X[1]} \\
+			&&&& {Z'} \\
+			&&&&& Y \\
+			{X[1]} && {Y'} && Z && X \\
 			&&& X \\
-			&& {Z'[1]} && {Y[1]}
-			\arrow[shift left, no head, from=1-4, to=4-7]
-			\arrow[shift right, no head, from=1-4, to=4-7]
-			\arrow[squiggly, from=2-3, to=1-4]
-			\arrow["\exists"', dashed, from=2-3, to=4-5]
-			\arrow[from=3-2, to=2-3]
-			\arrow["g", from=3-2, to=4-3]
-			\arrow["f"', from=4-1, to=3-2]
-			\arrow[from=4-1, to=4-3]
-			\arrow[from=4-3, to=4-5]
-			\arrow[from=4-3, to=5-4]
-			\arrow[from=4-5, to=4-7]
-			\arrow["\exists"{description}, dashed, from=4-5, to=5-4]
-			\arrow[from=4-7, to=6-5]
-			\arrow["\exists"{description}, squiggly, from=5-4, to=6-3]
-			\arrow[squiggly, from=5-4, to=6-5]
-			\arrow[squiggly, from=6-5, to=6-3]
+			&& {Y[1]} && {Z'[1]}
+			\arrow[shift right, no head, from=1-4, to=4-1]
+			\arrow[shift left, no head, from=1-4, to=4-1]
+			\arrow[squiggly, from=2-5, to=1-4]
+			\arrow["\exists", dashed, from=2-5, to=4-3]
+			\arrow[from=3-6, to=2-5]
+			\arrow["g"', from=3-6, to=4-5]
+			\arrow[from=4-1, to=6-3]
+			\arrow[from=4-3, to=4-1]
+			\arrow["\exists"{description}, dashed, from=4-3, to=5-4]
+			\arrow[from=4-5, to=4-3]
+			\arrow[from=4-5, to=5-4]
+			\arrow["f", from=4-7, to=3-6]
+			\arrow[from=4-7, to=4-5]
+			\arrow[squiggly, from=5-4, to=6-3]
+			\arrow["\exists"{description}, squiggly, from=5-4, to=6-5]
+			\arrow[squiggly, from=6-3, to=6-5]
 		\end{tikzcd}
 	}
 \end{lrbox}
@@ -160,3 +196,90 @@
 	}
 \end{lrbox}
 
+\begin{lrbox}{\Fünf}
+	\adjustbox{scale=0.45}{
+		\begin{tikzcd}[background color=red]
+			A && B && C && D && E \\
+			\\
+			{A'} && {B'} && {C'} && {D'} && {E'}
+			\arrow["f", from=1-1, to=1-3]
+			\arrow["\alpha"', two heads, from=1-1, to=3-1]
+			\arrow["g", from=1-3, to=1-5]
+			\arrow["\beta"', hook, two heads, from=1-3, to=3-3]
+			\arrow["h", from=1-5, to=1-7]
+			\arrow["\gamma"', hook, two heads, from=1-5, to=3-5]
+			\arrow["k", from=1-7, to=1-9]
+			\arrow["\delta"', hook, two heads, from=1-7, to=3-7]
+			\arrow["\epsilon"', hook, from=1-9, to=3-9]
+			\arrow["f^{\prime}", from=3-1, to=3-3]
+			\arrow["g^{\prime}", from=3-3, to=3-5]
+			\arrow["h^{\prime}", from=3-5, to=3-7]
+			\arrow["k^{\prime}", from=3-7, to=3-9]
+		\end{tikzcd}
+	}
+\end{lrbox}
+
+\begin{lrbox}{\Isom}
+	\adjustbox{scale=0.5}{
+		\begin{tikzcd}
+			V &&& W \\
+			\\
+			{V/\text{Ker}(f)} &&& {\text{Im}(f)}
+			\arrow["f", from=1-1, to=1-4]
+			\arrow["q"',"x \mapsto {[}x{]}" down, two heads, from=1-1, to=3-1]
+			\arrow["{\hat{f}}"'{pos=0.3}, dashed, two heads, from=1-1, to=3-4]
+			\arrow["\iota"',"y \mapsto y" up, hook, from=3-4, to=1-4]
+			\arrow["{\check{f}}"'{pos=0.7}, dashed, hook, from=3-1, to=1-4]
+			\arrow["{\overline{f}}","{[}x{]} \mapsto f(x)"', hook, two heads, from=3-1, to=3-4]
+		\end{tikzcd}
+		
+	}
+\end{lrbox}
+
+\begin{lrbox}{\Gruppe}
+	\adjustbox{scale=0.29}{
+		
+		\begin{tikzcd}
+			{(G \times G)\times G} && {G \times G\times G} && {G \times (G\times G)} \\
+			\\
+			{G \times G} && G && {G \times G} \\
+			\\
+			{1\times G} && G && {G \times 1}
+			\arrow["{\mu\times\text{id}}"', from=1-1, to=3-1]
+			\arrow["\cong"', from=1-3, to=1-1]
+			\arrow["\cong", from=1-3, to=1-5]
+			\arrow["{\text{id}\times\mu}"', from=1-5, to=3-5]
+			\arrow["\tau", bend left=20, leftrightarrow, dashed, from=3-1, to=3-5]
+			\arrow["\mu", from=3-1, to=5-3]
+			\arrow["{(\iota,\text{id})}"', from=3-3, to=3-1]
+			\arrow["{(\text{id},\iota)}", from=3-3, to=3-5]
+			\arrow["{\overline{\eta}}", from=3-3, to=5-3]
+			\arrow["\mu"', from=3-5, to=5-3]
+			\arrow["{\eta\times\text{id}}", from=5-1, to=3-1]
+			\arrow["{\text{pr}_2}"', from=5-1, to=5-3]
+			\arrow["{\text{id}\times\eta}"', from=5-5, to=3-5]
+			\arrow["{\text{pr}_1}", from=5-5, to=5-3]
+		\end{tikzcd}
+	}
+\end{lrbox}
+
+\tikzset{
+	manual_orientation/.style={anchor=north, rotate=55, inner sep=.5mm}
+}
+\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+\begin{lrbox}{\Polynom}
+	\adjustbox{scale=0.43}{
+		\begin{tikzcd}
+			\;\;\; R \, & {R{[}X{]}} & {\{X\}} \\
+			\\
+			\\
+			& S
+			\arrow["{\text{inc}}", from=1-1, to=1-2]
+			\arrow["\varphi"', from=1-1, to=4-2]
+			\arrow["{\exists !\Phi}"', dashed, from=1-2, to=4-2]
+			\arrow["{\text{inc}}"', from=1-3, to=1-2]
+			\arrow["{a \mapsfrom X}" manual_orientation, from=1-3, to=4-2]
+		\end{tikzcd}
+	}
+\end{lrbox}
