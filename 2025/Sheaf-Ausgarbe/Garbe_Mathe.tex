@@ -1,0 +1,34 @@
+\Large\textbf{%Artikeltitel
+Was ist eine Garbe?%
+}
+
+\medskip\normalsize%Artikeltext
+\textbf{Definition (Garbe):}
+Sei $X$ ein topologischer Raum
+Eine \emph{Garbe} $\mathcal{F}$ \emph{abelscher Gruppen} auf $X$ besteht aus folgenden Daten:
+\vspace{-\topsep}
+\begin{enumerate}
+	\item Für jede offene Menge $U$ eine abelsche Gruppe $\mathcal{F}(U)$.
+	\vspace{-\topsep}
+	\item Für jede Inklusion offener Mengen $V\subseteq U$ ein Gruppenhomomorphismus
+	$\mathrm{res}^U_V:\mathcal{F}(U)\rightarrow\mathcal{F}(U)$.
+\end{enumerate}
+\vspace{-\topsep}
+Wir fordern, dass die Axiome (Funktiorialität), (Lokalität) und (Kleben) gelten; siehe Wikipedia oder ncatlab.
+\bigskip 
+
+\textbf{Beispiele und Nicht-Beispiele:} 
+Sei $X:=\mathbb{R}$ und $\mathcal{F}$ gegeben durch $\mathcal{F}(U):=\{f:U\rightarrow\mathbb{R}\mid f\text{ \say{blabla}}\}$ und $\mathrm{res}^U_V(f)=f|_V$.\\
+Für \say{blabla} $\in$ \{konstant, beschränkt\} gilt (Kleben) nicht.\\
+Für \say{blabla} $\in$ \{lokal konstant, lokal beschränkt, stetig, analytisch\} ist dies eine Garbe. 
+\bigskip 
+
+\textbf{Lemma (Eine Garbe besteht aus Halmen): }
+Sei $\mathcal{F}$ eine Garbe abelscher Gruppen auf $X$.
+Dann ist die kanonische Funktion\footnote{siehe Literatur} $\mathcal{F}(U)\rightarrow\prod_{x\in U} \mathcal{F}_x$ injektiv (die Gruppen $\mathcal{F}_x$ nennt man Halme).
+
+%nach kanonische Funktion:"\footnote{siehe Literatur}"
+
+\begin{flushright}%Autor
+Alex
+\end{flushright}

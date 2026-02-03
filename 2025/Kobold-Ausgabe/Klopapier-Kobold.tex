@@ -1,0 +1,236 @@
+\documentclass[twoside,11pt,a4paper]{article} % weitere Option: twoside
+
+% Aus der Klopapier-Vorlage, zuletzt angepasst am 23.11.2023
+
+%------------------------------------------------------------------------------------------------
+%
+%  ES FOLGEN VOREINSTELLUNGEN, DIE IN DER REGEL NICHT GEÄNDERT WERDEN MÜSSEN
+%
+%------------------------------------------------------------------------------------------------
+
+
+% weitere Pakete laden
+\usepackage[utf8]{inputenc}		% Kodierung einstellen
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{anyfontsize}
+
+\usepackage{courier}            % Courier-Font (für \texttt{ })
+
+\usepackage[normalem]{ulem}     % Unter-/Durchstreichungen
+
+\usepackage[gen]{eurosym}       % Euro-Symbol "€", \euro{}
+
+\usepackage{amsmath}            % AMS (American Mathematical Society): diverse
+\usepackage{amssymb}            % Weitere AMS Symbole
+\usepackage{amsfonts}           % Weitere AMS Zeichensätze
+
+\usepackage{color}              % Für Farben. Macht \kloblau usw. möglich.
+\usepackage{graphicx}           % Für Bilder.
+\usepackage{float}              % Irgendwas mit Position von Table/Figure/...
+\usepackage{geometry}           % Um Raender anzupassen.
+
+\usepackage{lipsum}				% Für Blindtext.
+
+\usepackage{lettrine}           % Für einen grossen Anfangsbuchstaben
+
+\usepackage[hidelinks]{hyperref}% Links und so
+
+\usepackage{tikz}
+\usepackage{mnsymbol}
+
+% Eigene Farben
+\definecolor{kloblau}{rgb}{0,0.3,0.5}
+%\definecolor{uniblau}{cmyk}{1,0.55,0,0.43}
+\definecolor{klorange}{rgb}{0.8,0.5,0} %Ganz recht! Klorange! Mit nur einem o. 
+\definecolor{klogruen}{rgb}{0,0.5,0.3}
+\definecolor{klorot}{rgb}{0.5,0,0.3}
+\definecolor{kloviolett}{rgb}{0.3,0,0.5}
+
+%Keine Leerstelle nach Kommas
+\DeclareMathSymbol{,}{\mathord}{letters}{"3B}
+
+% Passt die Textraender an
+\newgeometry{
+	left= 1cm,
+	right=1cm,
+	top=1cm,
+	bottom=1cm,
+	bindingoffset=0mm
+}
+
+% Fussnotennummerierung in Minipage
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
+
+\setlength{\parindent}{0pt}
+
+% Klopapier-Logo
+\newcommand{\Klogo}{\mathfrak{Klo}\mathtt{pap\mspace{-0.5mu}i\mspace{-1mu}er}}
+% Klopapier in texttt
+\newcommand{\Klopapier}{\texttt{Klopapier}}
+
+
+%------------------------------------------------------------------------------------------------
+%
+%  AB HIER SOLLEN AENDERUNGEN VORGENOMMEN WERDEN
+%
+%------------------------------------------------------------------------------------------------
+
+%  AUSGABENSPEZIFISCHE VOREINSTELLUNGEN
+
+%Titelfarbe. 
+\newcommand{\Titelfarbe}{% Optionen: kloblau, klorange, klogruen, klorot, kloviolett
+klogruen%
+}
+
+%Ausgaben-Titel
+\newcommand{\Titel}{% Hier Titel einfügen
+Kobold-Ausgabe
+}
+
+%Titelbild
+\newcommand{\Titelbild}{% Hier Dateiname einfügen.
+Kobold.png
+}
+%Titelbildbeschreibung
+\newcommand{\Titelcaption}{% Hier Titelbild beschreiben.
+Illustration: Moritz
+}
+
+%----------------------------------------
+%  ARTIKEL
+%----------------------------------------
+
+%----------------------------------------
+%  ARTIKEL LINKS
+%----------------------------------------
+%Erster Artikel links
+%
+%Artikeltext
+\newcommand{\linksArtikelEins}{%
+Kobold_V2.tex%
+}
+%Artikelfarbe
+\newcommand{\linksArtikelEinsFarbe}{%
+klorange%
+}
+
+%Zweiter Artikel links
+%
+%Artikeltext
+\newcommand{\linksArtikelZwei}{%
+Schlext_getext.tex%
+}
+%Artikelfarbe
+\newcommand{\linksArtikelZweiFarbe}{%
+klorot%
+}
+
+%Dritter Artikel links
+%
+%Artikeltext
+\newcommand{\linksArtikelDrei}{%
+%
+}
+%Artikelfarbe
+\newcommand{\linksArtikelDreiFarbe}{%
+klogruen%
+}
+
+%----------------------------------------
+%  ARTIKEL RECHTS
+%----------------------------------------
+%Erster Artikel rechts
+%
+%Artikeltext
+\newcommand{\rechtsArtikelEins}{%
+RaetselvonMax.tex%
+}
+%Artikelfarbe
+\newcommand{\rechtsArtikelEinsFarbe}{%
+kloblau%
+}
+
+%Zweiter Artikel rechts
+%
+%Artikeltext
+\newcommand{\rechtsArtikelZwei}{%
+xkcd.tex%
+}
+%Artikelfarbe
+\newcommand{\rechtsArtikelZweiFarbe}{%
+kloviolett%
+}
+
+%------------------------------------------------------------------------------------------------
+%
+%  AB HIER MUESSEN EIGENTLICH KEINE AENDERUNGEN MEHR VORGENOMMEN WERDEN
+%
+%------------------------------------------------------------------------------------------------
+
+\begin{document}
+\pagestyle{empty}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Hier linke Seite
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\begin{minipage}{0.6\textwidth}
+\begin{center}
+ \fontsize{70}{70}\selectfont
+ \textcolor{\Titelfarbe}{$\Klogo$}
+ \normalsize
+\end{center}
+\input{Editorial.tex}
+\color{\linksArtikelEinsFarbe}
+\input{\linksArtikelEins}
+\normalcolor
+
+\color{\linksArtikelZweiFarbe}
+\input{\linksArtikelZwei}
+\normalcolor
+
+\color{\linksArtikelDreiFarbe}
+\input{\linksArtikelDrei}
+\normalcolor
+\end{minipage}
+ \hspace{0.05\textwidth}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hier rechte Seite
+ \begin{minipage}{0.3\textwidth}
+% Hier Ausgabenbild mit Benennung
+\begin{minipage}{0.1\textwidth}
+ \rotatebox{90}{\kern 0cm \textcolor{\Titelfarbe}{\huge{\texttt{\Titel}}}}
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+ \begin{figure}[H]
+\includegraphics[width=\textwidth]{\Titelbild}
+\end{figure}
+\tiny \hfill \Titelcaption
+\end{minipage} 
+
+\vspace{0.5cm}
+
+\begin{tabular}{|p{0.15\textwidth}p{0.7\textwidth}|}
+\hline & \\[-1.5ex]
+\multicolumn{2}{|l|}{\textbf{Termine:}} \\
+\input{Termine.tex}\\[1ex]
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\color{\rechtsArtikelEinsFarbe}
+\input{\rechtsArtikelEins}
+\normalcolor
+
+\color{\rechtsArtikelZweiFarbe}
+\input{\rechtsArtikelZwei}
+\normalcolor
+\end{minipage}
+
+\vspace{0.5cm}
+
+\Large{\textcolor{\Titelfarbe}{Lob \& Kritik bitte an \textbf{klopapier@mathe.stuvus.uni-stuttgart.de}.}}\\
+\tiny{Die Texte stellen jeweils die Meinung der Autor*innen und nicht notwendigerweise die der Fachgruppe dar.}
+\end{center}
+\end{document}

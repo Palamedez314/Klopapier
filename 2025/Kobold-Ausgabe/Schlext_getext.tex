@@ -1,0 +1,32 @@
+\Large\textbf{%Artikeltitel
+	SCHL\kern-.1em%
+	\lower0.5ex\hbox{E}\kern-.12em%
+	XT GET\kern-.1em%
+	\lower0.5ex\hbox{E}\kern-.12em%
+	XT%
+}
+
+\medskip\normalsize%Artikeltext
+Wenn man in Latex fett schreiben will, ergeben sich mehrere Möglichkeiten.
+Man kann natürlich normal einfach \textbf{\\textbf\{Text\}} o.ä. benutzen. Man kann aber auch lustiger sein:
+\begin{itemize}
+	\setlength\itemsep{1em}
+	\item \makebox[0.4pt][l]{\textbackslash makebox[0.4pt][l]\{Text\}Text}\textbackslash makebox[0.4pt][l]\{Text\}Text
+	\item \tikz{\node at (0,0) {\\tikz\{\\node at (0,0) \{Text\}; \\node at (0.015,0) \{Text\}\}}; \node at (0.015,0) {\\tikz\{\\node at (0,0) \{Text\}; \\node at (0.015,0) \{Text\}\}}}
+	\item \fontfamily{LibreBodoni-TLF}\selectfont
+	\textbackslash fontfamily\{LibreBodoni-TLF\} \textbackslash selectfont 
+	
+	Text
+	
+	\textbackslash fontfamily\{cmr\} \textbackslash selectfont
+	\fontfamily{cmr}\selectfont
+\end{itemize}
+
+
+Dies geht natürlich auch mit anderen Fonts, die fettgedruckt aussehen.
+
+\begin{flushright}%Autor
+	Benedikt \& Alex
+\end{flushright}
+
+

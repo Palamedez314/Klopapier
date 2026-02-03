@@ -1,0 +1,297 @@
+\documentclass[11pt]{article}
+\usepackage[paper=a4paper]{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+\usepackage{eso-pic}
+\usepackage{amsmath, amssymb}
+\usepackage{anyfontsize}
+\usepackage{lipsum}% Für Blindtext.
+
+\usepackage[german]{babel}
+\usepackage[ddmmyyyy]{datetime} 
+\renewcommand{\dateseparator}{.}
+
+\usepackage[outline]{contour}
+\usepackage{qrcode}
+
+\setlength{\parindent}{0pt}
+
+% Spiegelfarben
+\definecolor{spiegelrot}{RGB}{237, 77, 46}
+% Eigene Farben
+\definecolor{kloblau}{rgb}{0,0.3,0.5}
+%\definecolor{uniblau}{cmyk}{1,0.55,0,0.43}
+\definecolor{klorange}{rgb}{0.8,0.5,0} %Ganz recht! Klorange! Mit nur einem o. 
+\definecolor{klogruen}{rgb}{0,0.5,0.3}
+\definecolor{klorot}{rgb}{0.5,0,0.3}
+\definecolor{kloviolett}{rgb}{0.3,0,0.5}
+
+\newcommand{\Klogo}{\mathfrak{Klo}\mathtt{pap\mspace{-0.5mu}i\mspace{-1mu}er}}
+\newcommand{\Klopapier}{\texttt{Klopapier}}
+
+% Passt die Textraender an
+\newgeometry{
+  left= 2.25cm,
+  right=2.25cm,
+  top=4cm,
+  bottom=4cm,
+  bindingoffset=0mm
+}
+
+%------------------------------------------------------------------------------------------------
+%
+%  AB HIER SOLLEN AENDERUNGEN VORGENOMMEN WERDEN
+%
+%------------------------------------------------------------------------------------------------
+
+%  AUSGABENSPEZIFISCHE VOREINSTELLUNGEN
+
+%Ausgabenfarbe. 
+\newcommand{\Ausgabenfarbe}{% Optionen: kloblau, klorange, klogruen, klorot, kloviolett
+spiegelrot%
+}
+
+%Ausgaben-Titel
+\newcommand{\Titel}{% Hier Titel einfügen
+HEISSE LUFT?
+}
+
+%Ausgaben-Untertitel
+\newcommand{\Untertitel}{% Hier Titel einfügen
+Jetzt online: die erste Folge des offiziellen Klopapier-Podcasts.%
+}
+
+%----------------------------------------
+%  ARTIKEL
+%----------------------------------------
+
+%----------------------------------------
+%  ARTIKEL OBEN
+%----------------------------------------
+%Erster Artikel oben
+%
+%Artikeltext
+\newcommand{\obenArtikelEins}{%
+Schlext_getext.tex%
+}
+%Artikelfarbe
+\newcommand{\obenArtikelEinsFarbe}{%
+klorot%
+}
+
+%----------------------------------------
+%  ARTIKEL UNTEN
+%----------------------------------------
+%Erster Artikel unten
+%
+%Artikeltext
+\newcommand{\untenArtikelEins}{%
+Spiegelgruppen.tex%
+}
+%Artikelfarbe
+\newcommand{\untenArtikelEinsFarbe}{%
+klorange%
+}
+
+%Zweiter Artikel unten
+%
+%Artikeltext
+\newcommand{\untenArtikelZwei}{%
+Rätsel.tex%
+}
+%Artikelfarbe
+\newcommand{\untenArtikelZweiFarbe}{%
+kloviolett%
+}
+
+%Dritter Artikel unten
+%
+%Artikeltext
+\newcommand{\untenArtikelDrei}{%
+SpiegleinSpieglein.tex%
+}
+%Artikelfarbe
+\newcommand{\untenArtikelDreiFarbe}{%
+klogruen%
+}
+
+%------------------------------------------------------------------------------------------------
+%
+%  AB HIER MUESSEN EIGENTLICH KEINE AENDERUNGEN MEHR VORGENOMMEN WERDEN
+%
+%------------------------------------------------------------------------------------------------
+
+
+% --- Hintergrund mit rotem Rand, weißem Innenbereich ---
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+
+    % HINTERGRUND ÜBER DIE GANZE SEITE
+    \fill[\Ausgabenfarbe]
+      (current page.south west) rectangle (current page.north east);
+
+    % WEISSER TEXTBEREICH (entspricht dem geometry-Satzspiegel)
+    \fill[white]
+      ($(current page.south west) + (1.5cm,3.5cm)$)
+        rectangle
+      ($(current page.north east) + (-1.5cm,-3.5cm)$);
+     
+%     \node[
+%     align = center,
+%     ](test) at ($(current page.north east) + (-3.8cm,-2.1cm)$){\begin{normalsize}\fontfamily{cmss}\selectfont
+%     		\begin{tabular}{l}
+%     			\vspace*{-0.5mm}
+%     			C 314 CX\\
+%     			\hline
+%     			\vspace*{-1.5mm}
+%     			Nr. \n\\
+%     			\vspace*{-1mm}
+%     			8. Jahrgang$\: \cdot \:$\small{€}i\small{\$}to 2,00\\
+%     			\vspace*{-0.5mm}
+%     			6. Dezember 2025\\
+%     			\hline
+%     \end{tabular}\end{normalsize}};
+    	
+    	 DATUM
+    	    \node[anchor = north east] at ($(current page.north east) + (-1.5cm,-2.5cm)$)
+    		{\begin{Large}%
+    		\fontfamily{cmss}\selectfont%
+    		\today%
+    		\end{Large}};
+    	
+	% Schlusssatz
+	    \node[anchor=north, text width=\textwidth, align=center] at ($(current page.south)+(0,3cm)$)
+        {%
+\Large{\textcolor{white}{Lob \& Kritik bitte an \textbf{klopapier@mathe.stuvus.uni-stuttgart.de}.}}\\
+\tiny{Die Texte stellen jeweils die Meinung der Autor*innen und nicht notwendigerweise die der Fachgruppe dar.}
+        };
+
+	
+	%KLOPAPIER LOGO SCHATTEN
+	\node[anchor=north west] at ($(current page.north west) + (1.65cm,-1cm)$)
+      {\fontsize{70}{70}\selectfont%
+ 		\textcolor{black}{$\Klogo$}%
+ 		\normalsize%
+ 		};	
+	
+	%KLOPAPIER LOGO
+	\node[anchor=north west] at ($(current page.north west) + (1.5cm,-1cm)$)
+      {\fontsize{70}{70}\selectfont
+ 		\textcolor{white}{$\Klogo$}
+ 		\normalsize
+ 		};
+	
+	
+  \end{tikzpicture}%
+}
+
+
+\newcommand{\Seite}{
+	
+	\pgfmathsetseed{\number\pdfelapsedtime}
+	\pgfmathrandominteger{\n}{1}{100}
+	
+	\begin{tikzpicture}[remember picture,overlay]
+		% AUSGABENNUMMER -- FUN FACT: Jedes Mal random.
+		\node[anchor = north east] at ($(current page.north east) + (-1.5cm,-1.9cm)$)
+		{\begin{LARGE}%
+				\fontfamily{cmss}\selectfont%
+				\textbf{Nr.\n}%
+		\end{LARGE}};
+	\end{tikzpicture}
+	\vspace*{-4.5mm}
+	
+	\begin{minipage}[t]{0.65\textwidth}%
+		\input{Editorial.tex}
+	\end{minipage}
+	\hfill
+	%\begin{minipage}[t]{0.3\textwidth}%
+	%\color{\obenArtikelEinsFarbe}
+	%\input{\obenArtikelEins}
+	%\normalcolor
+	%\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}
+		\vspace*{-8mm}
+		%\color{\obenArtikelEinsFarbe}
+		%\input{\obenArtikelEins}
+		%\normalcolor
+		\phantom{\Large\textbf{%Artikeltitel
+				TERMINE%
+		}}
+		
+		\medskip\normalsize
+		\begin{tabular}{|p{0.15\textwidth}p{0.67\textwidth}|}
+			\hline & \\[-1.5ex]
+			\multicolumn{2}{|l|}{\textbf{Termine:}} \\
+			\input{Termine.tex}\\[1ex]
+			\hline
+		\end{tabular}
+		
+		\vspace{2mm}
+		
+	\end{minipage}
+	
+	\begin{center}
+		\begin{tikzpicture}
+			\node {\resizebox{\textwidth}{!}{%
+					\textcolor{white}{\contour{black}{%
+							\fontfamily{cmss}\selectfont%
+							\textbf{%
+								\Titel%
+			}}}}};
+		\end{tikzpicture}
+		\large
+		\textbf{%
+			\Untertitel%
+		}
+		\normalsize
+	\end{center}
+	
+	\vspace*{-2mm}
+	
+	\begin{minipage}[t]{0.3\textwidth}%
+		\color{\untenArtikelEinsFarbe}
+		\input{\untenArtikelEins}
+		\normalcolor
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}%
+		\color{\untenArtikelZweiFarbe}
+		\input{\untenArtikelZwei}
+		\normalcolor
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}%
+		\color{\untenArtikelDreiFarbe}
+		\input{\untenArtikelDrei}
+		\normalcolor
+		%\medskip\normalsize
+		%\phantom{\Large\textbf{%Artikeltitel
+				%TERMINE%
+				%}}
+		%\begin{tabular}{|p{0.15\textwidth}p{0.67\textwidth}|}
+		%	\hline & \\[-1.5ex]
+		%	\multicolumn{2}{|l|}{\textbf{Termine:}} \\
+		%	\input{Termine.tex}\\[1ex]
+		%	\hline
+		%\end{tabular}
+		
+		%\vspace{0.5cm}
+	\end{minipage}
+	
+	\newpage
+	
+}
+
+
+\begin{document}
+\pagestyle{empty}
+	
+\foreach \n in {1,...,1}{\Seite}
+
+\end{document}
