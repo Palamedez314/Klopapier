@@ -77,9 +77,13 @@
 
 %Titelfarbe. 
 \newcommand{\Titelfarbe}{% Optionen: kloblau, klorange, klogruen, klorot, kloviolett
-klogruen%
+kloviolett%
 }
 
+
+\newcommand{\TitelfarbeZwei}{% Optionen: kloblau, klorange, klogruen, klorot, kloviolett
+klogruen%
+}
 %Ausgaben-Titel
 \newcommand{\Titel}{% Hier Titel einfügen
 Vakanz-Ausgabe
@@ -87,8 +91,13 @@ Vakanz-Ausgabe
 
 %Titelbild
 \newcommand{\Titelbild}{% Hier Dateiname einfügen.
-Moritz_cropped.jpeg
+Moritz_lila_cropped.jpeg
 }
+
+\newcommand{\TitelbildZwei}{% Hier Dateiname einfügen.
+Moritz_grün_cropped.jpeg
+}
+
 %Titelbildbeschreibung
 \newcommand{\Titelcaption}{% Hier Titelbild beschreiben.
 Illustration: Tabea
@@ -109,7 +118,7 @@ bunte_Eminenz.tex%
 }
 %Artikelfarbe
 \newcommand{\linksArtikelEinsFarbe}{%
-klorot%
+klogruen%
 }
 
 %Zweiter Artikel links
@@ -120,7 +129,7 @@ klorot%
 }
 %Artikelfarbe
 \newcommand{\linksArtikelZweiFarbe}{%
-kloblau%
+klorot%
 }
 
 %Dritter Artikel links
@@ -131,7 +140,7 @@ kloblau%
 FÖJ.tex}
 %Artikelfarbe
 \newcommand{\linksArtikelDreiFarbe}{%
-klorot%
+kloblau%
 }
 
 %----------------------------------------
@@ -156,29 +165,40 @@ Rätsel.tex%
 }
 %Artikelfarbe
 \newcommand{\rechtsArtikelZweiFarbe}{%
-kloviolett%
+kloblau%
 }
 
 %Dritter Artikel rechts
 %
 %Artikeltext
 \newcommand{\rechtsArtikelDrei}{%
-%
+ArtikelVolltext2%
 }
 %Artikelfarbe
 \newcommand{\rechtsArtikelDreiFarbe}{%
-klorange%
+kloviolett%
 }
 
 %Vierter Artikel rechts
 %
 %Artikeltext
 \newcommand{\rechtsArtikelVier}{%
-%
+ArtikelMitBildStattArtikel%
 }
 %Artikelfarbe
 \newcommand{\rechtsArtikelVierFarbe}{%
 kloviolett%
+}
+
+%Fünfter Artikel rechts
+%
+%Artikeltext
+\newcommand{\rechtsArtikelFuenf}{%
+ArtikelVolltext3%
+}
+%Artikelfarbe
+\newcommand{\rechtsArtikelFuenfFarbe}{%
+klorange%
 }
 
 %------------------------------------------------------------------------------------------------
@@ -200,9 +220,11 @@ kloviolett%
  \normalsize
 \end{center}
 \input{Editorial.tex}
+\vspace*{-1mm}
 \color{\linksArtikelEinsFarbe}
 \input{\linksArtikelEins}
 \normalcolor
+\vspace*{-1mm}
 
 \color{\linksArtikelZweiFarbe}
 \input{\linksArtikelZwei}
@@ -260,24 +282,24 @@ kloviolett%
 \begin{center}
 \begin{minipage}{0.3\textwidth}
 % Hier Ausgabenbild mit Benennung
-\begin{minipage}{0.1\textwidth}
-\rotatebox{90}{\kern 0cm \textcolor{\Titelfarbe}{\huge{\texttt{\Titel}}}}
-\end{minipage}
 \begin{minipage}{0.85\textwidth}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{\Titelbild}
+\includegraphics[width=\textwidth]{\TitelbildZwei}
 \end{figure}
 \tiny \hfill \Titelcaption
 \end{minipage} 
+\begin{minipage}{0.1\textwidth}
+\rotatebox{-90}{\kern 0cm \textcolor{\TitelfarbeZwei}{\huge{\texttt{\Titel}}}}
+\end{minipage}
 
 \vspace{0.5cm}
 
-\begin{tabular}{|p{0.15\textwidth}p{0.7\textwidth}|}
-\hline & \\[-1.5ex]
-\multicolumn{2}{|l|}{\textbf{Termine:}} \\
-\input{Termine.tex}\\[1ex]
-\hline
-\end{tabular}
+%\begin{tabular}{|p{0.15\textwidth}p{0.7\textwidth}|}
+%\hline & \\[-1.5ex]
+%\multicolumn{2}{|l|}{\textbf{Termine:}} \\
+%\input{Termine.tex}\\[1ex]
+%\hline
+%\end{tabular}
 
 \vspace{0.5cm}
 
@@ -288,12 +310,17 @@ kloviolett%
 \color{\rechtsArtikelVierFarbe}
 \input{\rechtsArtikelVier}
 \normalcolor
+
+\color{\rechtsArtikelFuenfFarbe}
+\input{\rechtsArtikelFuenf}
+\normalcolor
+
 \end{minipage}
 \hspace{0.05\textwidth}
 \begin{minipage}{0.6\textwidth}
 \begin{center}
 	\fontsize{70}{70}\selectfont
-	\textcolor{\Titelfarbe}{$\Klogo$}
+	\textcolor{\TitelfarbeZwei}{$\Klogo$}
 	\normalsize
 \end{center}
 %\input{Editorial.tex}
@@ -314,7 +341,7 @@ kloviolett%
 
 \vspace{0.5cm}
 
-\Large{\textcolor{\Titelfarbe}{Lob \& Kritik bitte an \textbf{klopapier@mathe.stuvus.uni-stuttgart.de}.}}\\
+\Large{\textcolor{\TitelfarbeZwei}{Lob \& Kritik bitte an \textbf{klopapier@mathe.stuvus.uni-stuttgart.de}.}}\\
 \tiny{Die Texte stellen jeweils die Meinung der Autor*innen und nicht notwendigerweise die der Fachgruppe dar.}
 \end{center}
 
