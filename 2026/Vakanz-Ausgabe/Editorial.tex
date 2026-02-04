@@ -1,9 +1,29 @@
 %Diese Datei darf nicht umbenannt werden!
 Liebe Mitmenschen!
 
-\bigskip Aus gegebenem Anlass hab ich 
+\bigskip
+\vspace*{-1mm}
+Die leere Menge ist im Grunde unglaublich einfach:\\
+Wir nennen eine Menge leer, wenn sie keine Elemente hat ($\forall x\in M: \text{Falsch}$) und nach Extensionalität von Mengen gibt es auch nur eine solche Menge $\varnothing$.\\
+%Aus der leeren Menge gibt es in jede andere Menge $B$ eine Abbildung, weil wir dafür nur für alle $x\in \varnothing$ ein $y\in B$ angeben müssen... wir müssen also gar nichts tun!\\
+%Nach Extensionalität von Abbildungen ist diese Abbildung $\varnothing \rightarrow B$ eindeutig. (Also $\varnothing$ initial in $Set$ :))\\
+Aber was gibt es für Abbildungen in die leere Menge? Für eine solche Abb. $f: A \rightarrow \varnothing$ gilt: $\exists x \in A \Rightarrow \exists x \in \varnothing \Rightarrow \text{Falsch}$. Also ist (das eindeutige!) $\varnothing \rightarrow \varnothing$ die einzige solche Abbildung.\\
+Wir bekommen also $\exists x \in X \Leftrightarrow \neg \exists x \in \varnothing^{X} := \{X \rightarrow \varnothing\}$\\
 
-\bigskip Ich wünsche viel Spaß \& Erfolg beim Lesen \& Kacken.
+\vspace*{-1mm}
+Und hier fängt der Spaß an: Eine logische Aussage könnten wir  durch eine Menge neu definieren, so dass unsere Aussage dann wahr ist, wenn die Menge ein Element hat (z.B.: Wahr := $X$ mit $\exists x \in X$, Falsch := $\varnothing$) und unsere alt bekannten Logischen Verknüpfungen finden wir dann durch Überlegungen wie eben: $\neg P := \text{Falsch}^{P},\quad P \land Q := P \times Q \quad P \lor Q := P \amalg Q \quad P \Rightarrow Q := {P \rightarrow Q}, \quad \forall x \in X: P(x) := \prod_{x\in X}P(x), \quad$ usw...\\
+
+\vspace*{-1mm}
+Aber warum das ganze? Weil wir jetzt plötzlich unser Logiksystem verändern können indem wir unser Mengen-Modell verändern:\\
+Was passiert wenn wir bei unseren Überlegungen nur einelementige Mengen nehmen (und dafür z.B.: $\lor$ umdefinieren)?\\
+Was wenn unsere Mengen topologische Räume, und die Abbildungen stetig sind? Plötzlich betreiben wir konstuktive Mathematik!\\
+
+\vspace*{-1mm}
+Und das alles nur weil wir die vakante Menge angeschaut haben :)
+
+\vspace*{-1mm}
+\bigskip Ich wünsche weiter viel Spaß \& Erfolg beim Lesen \& Kacken.
+\vspace*{-1mm}
 \begin{flushright}
-Moritz
+Jonny
 \end{flushright}
