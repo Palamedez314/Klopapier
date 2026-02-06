@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.6)  6 FEB 2026 13:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.7)  6 FEB 2026 13:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -261,18 +261,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14 \begin{center}
+l.13 \begin{center}
                    
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 14--14
+Overfull \hbox (20.0pt too wide) in paragraph at lines 13--13
 [] 
  []
 
 ! Undefined control sequence.
-l.15 	\qrcode
+l.14 	\qrcode
              [height=0.4\textwidth]{https://mathe.stuvus.uni-stuttgart.de/ca...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -294,7 +294,7 @@ Missing character: There is no 4 in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.15 	\qrcode[height=0.4\textwidth]
+l.14 	\qrcode[height=0.4\textwidth]
                                    {https://mathe.stuvus.uni-stuttgart.de/ca...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -303,7 +303,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.15 	\qrcode[height=0.4\textwidth]
+l.14 	\qrcode[height=0.4\textwidth]
                                    {https://mathe.stuvus.uni-stuttgart.de/ca...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -381,7 +381,7 @@ Missing character: There is no / in font nullfont!
  
 Here is how much of TeX's memory you used:
  32 strings out of 474486
- 652 string characters out of 5743756
+ 652 string characters out of 5743755
  1924542 words of memory out of 5000000
  22417 multiletter control sequences out of 15000+600000
  558377 words of font info for 37 fonts, out of 8000000 for 9000
